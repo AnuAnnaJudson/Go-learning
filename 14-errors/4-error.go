@@ -34,8 +34,16 @@ func SearchSomething(s string) error {
 func main() {
     //os.PathError{}
     //os.LinkError{}
+    var q *QueryError
     err := SearchSomething("whatever")
     fmt.Println(err)
     err = SearchSomething("abc")
     fmt.Println(err)
+    if err != nil {
+        if errors.As(err, &q) { //check if error struct in chain
+           fmt.Println("custom error found in the chain", q.Func)
+           return
+        }
+        return
+    }
 }

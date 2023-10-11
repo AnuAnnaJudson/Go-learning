@@ -32,7 +32,7 @@ func main() {
 
         log.Println(err)
 
-        if errors.Is(err, ErrFileNotFound) {
+        if errors.Is(err, ErrFileNotFound) { //checks if custom error in chain or not
 
             fmt.Println("File not found")
 

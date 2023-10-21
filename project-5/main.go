@@ -1,5 +1,6 @@
 package main
 
+//run main.go then in cmd do curl localhost:8080/getuser or open this url in browser
 import (
 	"net/http"
 	"project-5/handlers"
